@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script defer src="../server/script.js"></script>
+    <!-- <script defer src="../server/app.js"></script> -->
+</head>
+<body>
+    <header>
+        <img src="assets/goog-img.png" alt="Goooogle" width="550" height="200" style="position: absolute; left: 32%; top: 20%">
+    </header>
+
+    <section>
+        <form method="get" id="f" role="search">
+            <input id="textBox" type="text" placeholder="Type query here" style="border: 1px solid lightgrey; border-radius: 15px"><br><br>
+            <button type="submit" onclick="handleRequest()" style="background: rgb(237, 237, 237); border: none; font-size: 14px; padding: 10px;">Goooogle Search</button>
+            <button type="submit" onclick="getRandomSearchQuery()" style="background: rgb(237, 237, 237); border: none; font-size: 14px; padding: 10px;">Random Search</button>
+        </form>
+    </section>
+
+
+<!-- comment to test whether we can push to github -->
+
+</body>
+</html>
