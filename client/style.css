@@ -1,0 +1,28 @@
+.f{
+    position: absolute;
+    width:50%
+}
+
+form input[type="submit"] {
+    font-family: 'Roboto', sans-serif;
+}
+
+#textBox {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 15px;
+    outline: none;
+}
+
+#textBox:hover {
+    box-shadow: 5px 3px 27px 0px rgba(0,0,0,0.52);
+    transition: all 0.8s ease-in;
+}
+
+
+form {
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    text-align: center;
+}
