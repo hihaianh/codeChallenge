@@ -1,0 +1,50 @@
+let form = document.querySelector('form');
+let searchResults = [];
+
+//API key: AIzaSyDxdV2IRz8P1kr0vm1EV9QWahAfQxUEN-c
+
+
+// ----- Start of functions -----
+function handleRequest(res){
+    try{
+        for(let i = 0;i < 10;i++){
+            document.getElementById('searchContent').innerHTML += `<br> <a href=${res.items[i].link}`
+        }
+    }catch(error){
+        console.log(error);
+    }
+}
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // let sQuery = new FormData(form);
+    // console.log(sQuery)
+    let q = document.getElementById('textBox').value;
+    console.log(q);
+    let newElement = document.createElement('script');
+    // let url = `https://www.google.com/search?q=${q}`;
+    let url = `https://www.googleapis.com/customsearch/v1?key=AIzaSyDxdV2IRz8P1kr0vm1EV9QWahAfQxUEN-c&cx=a7b574e9955255ea2&q=${q}`
+    console.log(url)
+    newElement.src = url;
+    newElement.id = "mainscript"
+    document.body.appendChild(newElement);
+    fetch(url, {
+        //mode: 'no-cors',
+        method: "GET", 
+        headers: {
+            "Content-type": "application/json",
+            "Access-Control-Request-Method": "GET",
+            "Access-Control-Allow-Origin": "*"
+        }
+    })
+    .then(response => console.log(response))
+    .then(
+    )
+})
+
+function getRandomSearchQuery () {
+    // let rs = searchResults[Math.floor(Math.random() * searchResults.length)]
+
+}
+
+// ----- End of functions -----
