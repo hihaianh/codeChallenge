@@ -51,7 +51,7 @@ form.addEventListener('submit', (e) => {
 
 async function getRandomSearchQuery () {
     let formSend = await submitForm()
-    // let rs = searchResults[Math.floor(Math.random() * (searchResults.length - 1)]
+    // let rs = searchResults[Math.floor(Math.random() * searchResults.length]
     let randomNumber = Math.floor(Math.random() * (searchResults.length - 1))
     let urlToGo = searchResults[randomNumber]?.link
     if (urlToGo) {
