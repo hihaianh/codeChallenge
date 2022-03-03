@@ -15,6 +15,12 @@ function handleRequest(res){
     }
 }
 
+document.getElementById('textBox').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        form.submit()
+    }
+})
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     // let sQuery = new FormData(form);
@@ -37,14 +43,24 @@ form.addEventListener('submit', (e) => {
             "Access-Control-Allow-Origin": "*"
         }
     })
-    .then(response => console.log(response))
-    .then(
-    )
+    .then(response => {
+        searchResults = response.items 
+        console.log(response)
+    })
 })
 
-function getRandomSearchQuery () {
-    // let rs = searchResults[Math.floor(Math.random() * searchResults.length)]
-
+async function getRandomSearchQuery () {
+    let formSend = await submitForm()
+    // let rs = searchResults[Math.floor(Math.random() * searchResults.length]
+    let randomNumber = Math.floor(Math.random() * (searchResults.length - 1))
+    let urlToGo = searchResults[randomNumber]?.link
+    if (urlToGo) {
+        window.location.href = urlToGo
+    }
 }
+
+function submitForm() {
+    return Promise.resolve(() => form.submit())
+  }
 
 // ----- End of functions -----

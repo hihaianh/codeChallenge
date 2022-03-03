@@ -1,12 +1,12 @@
 const express = require('express')
-const request = require('request')
+//const request = require('request')
 const cors = require('cors')
-app.require(cors)
 const app = express()
 const port = 80;
 const path = require('path')
 
 // ----- Start of routes -----
+app.use(cors())
 // app.get('/', (req, res) => res.send('Testing'))
 
 //Creating a path to index.html so this file will show on this certain endpoint
